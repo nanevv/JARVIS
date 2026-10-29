@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Low Water — walks across the tidal flats</title>
+<meta name="description" content="A sample concept page: guided walks on the sea floor, timed by the tide.">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<header class="bar">
+  <a class="mark" href="#top">Low Water</a>
+  <p class="synthetic">Sample concept. Fictional company, modelled tide data.</p>
+</header>
+
+<main id="top">
+
+<section class="hero" aria-labelledby="h1">
+  <h1 id="h1">The sea leaves for a few hours. <span>Walk out&nbsp;on&nbsp;it.</span></h1>
+
+  <div class="readout" aria-live="polite">
+    <p class="status" id="status">Flats open</p>
+    <p class="detail" id="detail">—</p>
+    <dl class="figures">
+      <div><dt>Time</dt><dd id="r-time">—</dd></div>
+      <div><dt>Sea level</dt><dd id="r-level">—</dd></div>
+    </dl>
+  </div>
+
+  <figure class="tide">
+    <svg id="chart" viewBox="0 0 1200 360" role="img" aria-label="Modelled tide curve for one day. The shaded band marks when the flats are walkable."></svg>
+    <label class="scrub" for="t">
+      <span>Drag through the day</span>
+      <input id="t" type="range" min="0" max="1440" step="5" value="0">
+    </label>
+  </figure>
+</section>
+
+<section class="plan" aria-labelledby="h2">
+  <h2 id="h2">A walk is measured from low water, not from the clock.</h2>
+  <ol class="timeline">
+    <li><span class="when">−1h 30</span><p><strong>Meet at the dyke.</strong> Boots on, route read out loud, the turn-back time written where everyone can see it.</p></li>
+    <li><span class="when">Low water</span><p><strong>The far bank.</strong> The widest the flats get. Ripples, worm casts, the shells nobody sees from shore.</p></li>
+    <li><span class="when">+1h 30</span><p><strong>Back on the dyke.</strong> Always. The sea doesn't negotiate, so the turn-back time doesn't either.</p></li>
+  </ol>
+</section>
+
+<section class="rules" aria-labelledby="h3">
+  <h3 id="h3">Four rules the water enforces</h3>
+  <dl>
+    <div><dt>Turn back on the chart.</dt><dd>The time is fixed before we leave. Feeling fine at the turn-back time changes nothing.</dd></div>
+    <div><dt>Stay in the group.</dt><dd>Fog on the flats takes the horizon away. Nobody wanders off for a better shell.</dd></div>
+    <div><dt>Wear what gets wet.</dt><dd>Mud is deeper in some places than others. Old boots and a change of socks.</dd></div>
+    <div><dt>Weather can cancel a walk.</dt><dd>Wind pushes water in early. If the forecast says so, we stay on the dyke.</dd></div>
+  </dl>
+</section>
+
+<section class="book" aria-labelledby="h4">
+  <h2 id="h4">Next low waters</h2>
+  <p class="note">Modelled for this demo from a simple twelve-hour tide. A real tide table would replace it.</p>
+  <table>
+    <thead><tr><th scope="col">Day</th><th scope="col">Low water</th><th scope="col">Meet</th><th scope="col"><span class="sr">Choose</span></th></tr></thead>
+    <tbody id="lows"></tbody>
+  </table>
+  <p class="held" id="held" role="status">No walk held yet.</p>
+</section>
+
+</main>
+
+<footer>
+  <p>Low Water is a made-up company used to show a page layout. Tide times are computed in your browser from a simplified model and must never be used to plan a real crossing.</p>
+</footer>
+
+</body>
+</html>
